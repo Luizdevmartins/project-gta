@@ -1,0 +1,213 @@
+body{
+    font-family: 'Chalet', sans-serif;
+    background-color: #171616;
+    color: white;
+}
+
+/*Here is where all the divs with the images and ul are gonna be */
+.cabecalho{
+    height: 80px;
+    background-color: #0b0b0b;
+    display: flex;
+/* Align horizontally, it goes to right and left */
+    justify-content: space-between;
+/* Align at the center of the space given to it */
+    align-items: center;
+    padding: 0 80px;
+    border-bottom: 2px solid #282828;
+}
+/* The two images are gonna be side by side */
+.cabecalho .logo{
+    display: flex;
+    gap: 30px;
+}
+/* The links are gonna be in a row */
+.cabecalho .menu{
+    display: flex;
+    gap: 30px;
+}
+
+.cabecalho .menu li a{
+    padding: 30px;
+    color: #e8e8e8;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Chalet';
+}
+
+.cabecalho .menu li a:hover{
+    border-bottom: 1px solid white;
+}
+
+/*The display flex is important to make it as a row, 
+and then, the informations are gonna be absolute */
+.home{
+    display: flex;
+/* Relative to the first position */
+    position: relative;
+/*Taking the height of header and subtracting by the total height of the screen */
+    min-height: calc(100vh - 80px);
+}
+
+/*This makes the color be above all the content */
+.home::after{
+    content: '';
+/* It makes it appear */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, .70) 20%, transparent 80%);
+}
+
+.home .imagem-fundo{
+    width: 100%;
+/*Covers all the space it has */
+    object-fit: cover;
+}
+
+/* Now that the image and black shadow are positioned, the informations block it's gonna be as a column, in the center and above the other content. The width is gonna make the content be more to the left */
+.home .informacoes{
+    position: absolute;
+    z-index: 1;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 80px 80px 80px 170px;
+    max-width: 780px;
+}
+
+.home .informacoes img{
+    max-width: 150px;
+}
+
+/*The icons of the games are being spaced */
+.home .informacoes .lista-de-jogos{
+    display: flex;
+    gap: 32px;
+}
+.home .informacoes .titulo{
+    font-size: 50px;
+}
+
+.home .informacoes .texto{
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+
+/* This part is about the buttons inside main and  the section out the main respectively */
+.btn-comprar, .btn-plataforma{
+    background-color: rgba(255, 255, 255, .1);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    font-size: 28px;
+    text-align: center;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+/* This one with the ul */
+.btn-plataforma{
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+}
+/* The one in the main */
+.btn-comprar:hover{
+    background-color: white;
+    color: black;
+    transition: all .3s ease-in;
+}
+/* The image of gta 5 */
+.compre-ja .capa-do-jogo{
+    width: 270px;
+}
+
+/* Here are all the images and texts of the part of buying the games in multiple platforms */
+.compre-ja{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+    align-items: center;
+}
+
+.compre-ja .titulo{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* This box is rigth after the title compre-já, so basically this is gonna be a column with the games images, and the spacing is for being not too close of the border of compre-ja */
+.compre-ja .cartao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    width: 50%;
+    border-radius: 10px;
+    padding: 80px;
+    gap: 40px;
+}
+/* This is the flexible area where the games are */
+.compre-ja .informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.compre-ja .informacoes h3{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.compre-ja .informacoes p{
+    color: #e8e8e8;
+    font-size: 16px;
+    line-height: 1.6;
+}
+/* This is the ul for the images of the platforms */
+.compre-ja .informacoes, .plataformas{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+/* Now the platform inside the compre-ja, which has the images, but doesn't appear, with the javascript we can make it appear */
+.compre-ja .btn-plataforma .plataformas{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all .3s ease-in;
+    display: none;
+    opacity: 0;
+}
+
+.compre-ja .btn-plataforma .plataformas.ativo{
+    display: flex;
+    opacity: 1;
+}
+/* The spacement inside the div that it's gonna show the platforms */
+.compre-ja .btn-plataforma .plataformas li{
+    padding: 20px;
+}
+/*The first */
+.compre-ja .btn-plataforma .plataformas li:nth-child(1){
+    border: 1px solid #00439c;
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(2){
+    border: 1px solid #465870;
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(3){
+    border: 1px solid #2e73cd;
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(4){
+    border: 1px solid #203147;
+}
+.compre-ja .btn-plataforma .plataformas li:nth-child(5){
+    border: 1px solid #649be2;
+}
